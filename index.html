@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delicious Bites</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <!-- locomotive css  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <!-- shery css  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- remixicon cdn  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- css file  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="loader">
+      <div class="line">
+        <div id="line1-part1">
+          <h5>00</h5>
+          <h6>- 100</h6>
+        </div>
+        <h1>Your</h1>
+      </div>
+      <div class="line">
+        <h1>Dining Experience</h1>
+      </div>
+      <div class="line">
+        <h1>is getting ready</h1>
+        <h2>Now</h2>
+      </div>
+    </div>
+
+    <!-- Cloud Overlay -->
+    <div class="cloud-overlay" id="cloudOverlay">
+      <div class="cloud cloud1"></div>
+      <div class="cloud cloud2"></div>
+      <div class="cloud cloud3"></div>
+      <div class="cloud cloud4"></div>
+      <div class="cloud cloud5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <button class="hamburger" onclick="toggleNav()">☰</button>
+    <nav class="nav-menu" id="navMenu">
+      <div class="nav-item">
+        <div class="nav-header" onclick="toggleDesc('home')">
+          <span>Home</span>
+          <span class="nav-toggle" id="toggle-home">+</span>
+        </div>
+        <div class="nav-desc" id="desc-home">
+          Welcome to our delicious food website!
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-header" onclick="toggleDesc('menu')">
+          <span>Menu</span>
+          <span class="nav-toggle" id="toggle-menu">+</span>
+        </div>
+        <div class="nav-desc" id="desc-menu">
+          Explore our mouth-watering dishes and special offers.
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-header" onclick="toggleDesc('about')">
+          <span>About Us</span>
+          <span class="nav-toggle" id="toggle-about">+</span>
+        </div>
+        <div class="nav-desc" id="desc-about">
+          Learn about our passionate chefs and culinary story.
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-header" onclick="toggleDesc('contact')">
+          <span>Contact</span>
+          <span class="nav-toggle" id="toggle-contact">+</span>
+        </div>
+        <div class="nav-desc" id="desc-contact">
+          Reach out to us at hello@deliciousbites.com
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Page -->
+    <main class="main-content" id="mainContent">
+      <h1 class="hero-title">Delicious Bites</h1>
+      <p class="hero-subtitle">
+        Experience culinary excellence like never before
+      </p>
+
+      <div class="action-buttons">
+        <button class="action-btn btn-order ripple">
+          <span class="btn-emoji">🍽️</span>Order Now
+        </button>
+
+        <button class="action-btn btn-about" onclick="loadPage('about')">
+          <span class="btn-emoji">👨‍🍳</span>About Us
+        </button>
+        <button class="action-btn btn-booking" onclick="loadPage('booking')">
+          <span class="btn-emoji">📅</span>Book Table
+        </button>
+      </div>
+
+      <div class="food-marquee">
+        <div class="marquee-content">
+          <!-- Add your food images here -->
+          <img
+            src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+            alt="Delicious food"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+            alt="Food 1"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+            alt="Food 2"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+            alt="Food 3"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg"
+            alt="Food 4"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"
+            alt="Food 5"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg"
+            alt="Food 6"
+            class="food-image"
+          />
+          <!-- Duplicate for smoother loop -->
+          <img
+            src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+            alt="Food 7"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+            alt="Food 8"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+            alt="Food 9"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg"
+            alt="Food 10"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"
+            alt="Food 11"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg"
+            alt="Food 12"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+            alt="Food 1"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+            alt="Food 2"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+            alt="Food 3"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg"
+            alt="Food 4"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"
+            alt="Food 5"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+            alt="Food 6"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+            alt="Food 7"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+            alt="Food 8"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg"
+            alt="Food 9"
+            class="food-image"
+          />
+          <img
+            src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"
+            alt="Food 10"
+            class="food-image"
+          />
+        </div>
+        <!-- (Repeat for looping) -->
+      </div>
+    </main>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-emoji">🍽️</div>
+      <div class="loading-text">Preparing your experience...</div>
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+    </div>
+
+    <!-- Content Pages -->
+    <div class="content-page" id="orderPage">
+      <div class="content-emoji">✅</div>
+      <h1 class="content-title">🛒 Order Success!</h1>
+      <p class="content-text">
+        Your delicious meal is being prepared with love and care.
+      </p>
+      <button class="back-btn" onclick="goHome()">Return Home</button>
+    </div>
+
+    <div class="content-page" id="aboutPage">
+      <div class="content-emoji">🌟</div>
+      <h1 class="content-title">👨‍🍳 Our Story</h1>
+      <p class="content-text">
+        Meet our passionate chefs who create culinary magic every day.
+      </p>
+      <button class="back-btn" onclick="goHome()">Return Home</button>
+    </div>
+
+    <div class="content-page" id="bookingPage">
+      <div class="content-emoji">🎉</div>
+      <h1 class="content-title">📅 Table Reserved!</h1>
+      <p class="content-text">Your perfect dining experience awaits you.</p>
+      <button class="back-btn" onclick="goHome()">Return Home</button>
+    </div>
+
+    <h3>Popular Dishes</h3>
+    <div class="gallery">
+      <div class="image-box">
+        <img
+          src="https://blog.swiggy.com/wp-content/uploads/2024/10/Image1_Pani-Puri-1024x538.jpg"
+          alt="Biryani"
+        />
+      </div>
+      <div class="image-box">
+        <img
+          src="https://southindianstore.com/wp-content/uploads/2018/06/breakfast-2408818_1920.jpg"
+          alt="Butter Chicken"
+        />
+      </div>
+      <div class="image-box">
+        <img src="https://static.toiimg.com/photo/87282159.cms" alt="Samosa" />
+      </div>
+      <div class="image-box">
+        <img
+          src="https://static.toiimg.com/thumb/54308405.cms?imgsize=417844&width=800&height=800"
+          alt="Masala Dosa"
+        />
+      </div>
+      <div class="image-box">
+        <img
+          src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/rajma-recipe.jpg"
+          alt="Rajma Chawal"
+        />
+      </div>
+    </div>
+
+    <div data-color="white" class="team section font-['NTR'] py-20">
+      <h1 class="text-center text-8xl tracking-tight">Our Team</h1>
+      <div class="list w-full px-10 mt-10">
+        <!-- TEAM MEMBER 1 -->
+        <div
+          class="listitem group relative w-full py-5 border-b-2 border-black"
+        >
+          <div class="relative flex items-center justify-between z-[3]">
+            <div class="left flex gap-20">
+              <h3 class="text-6xl">01</h3>
+              <h3 class="text-6xl">Emma</h3>
+            </div>
+            <h3 class="text-3xl">Owner</h3>
+          </div>
+          <div
+            class="picture pointer-events-none absolute opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 overflow-hidden z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full bg-red-500"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+        </div>
+
+        <!-- TEAM MEMBER 2 -->
+        <div
+          class="listitem group relative w-full py-5 border-b-2 border-black"
+        >
+          <div class="relative flex items-center justify-between z-[3]">
+            <div class="left flex gap-20">
+              <h3 class="text-6xl">02</h3>
+              <h3 class="text-6xl">John Rk Masdney</h3>
+            </div>
+            <h3 class="text-3xl">Marketing</h3>
+          </div>
+          <div
+            class="picture pointer-events-none absolute opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 overflow-hidden z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full bg-red-500"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+        </div>
+
+        <!-- TEAM MEMBER 3 -->
+        <div
+          class="listitem group relative w-full py-5 border-b-2 border-black"
+        >
+          <div class="relative flex items-center justify-between z-[3]">
+            <div class="left flex gap-20">
+              <h3 class="text-6xl">03</h3>
+              <h3 class="text-6xl">Sweat Paul</h3>
+            </div>
+            <h3 class="text-3xl">Manager HR</h3>
+          </div>
+          <div
+            class="picture pointer-events-none absolute opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 overflow-hidden z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full bg-red-500"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- TEAM MEMBER 4 -->
+        <div
+          class="listitem group relative w-full py-5 border-b-2 border-black"
+        >
+          <div class="relative flex items-center justify-between z-[3]">
+            <div class="left flex gap-20">
+              <h3 class="text-6xl">04</h3>
+              <h3 class="text-6xl">Amelia Kerr</h3>
+            </div>
+            <h3 class="text-3xl">Chef</h3>
+          </div>
+          <div
+            class="picture pointer-events-none absolute opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 overflow-hidden z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full bg-red-500"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- TEAM MEMBER 5 -->
+        <div
+          class="listitem group relative w-full py-5 border-b-2 border-black"
+        >
+          <div class="relative flex items-center justify-between z-[3]">
+            <div class="left flex gap-20">
+              <h3 class="text-6xl">05</h3>
+              <h3 class="text-6xl">Lauren Bell</h3>
+            </div>
+            <h3 class="text-3xl">Chef</h3>
+          </div>
+          <div
+            class="picture pointer-events-none absolute opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 overflow-hidden z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full bg-red-500"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- locomotive js  -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <!-- gsap cdn  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrolltrigger cdn  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Three JS cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <!-- controlKit for debunging -->
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+    <!-- Shery JS cdn  -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.js"
+    ></script>
+
+    <!-- JavaScript file  -->
+    <script src="script.js"></script>
+  </body>
+</html>
